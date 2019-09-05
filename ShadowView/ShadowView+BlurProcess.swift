@@ -26,13 +26,13 @@ extension ShadowView{
     
     
     
-    public func updateShadow(dispatchQueue: DispatchQueue = .main){
+    public func updateShadow(dispatchQueue: DispatchQueue = .global()){
         
         self.shadowImageView.image = nil
         self.createLayerImage(dispatchQueue: dispatchQueue)
     }
     
-    private func createLayerImage(dispatchQueue: DispatchQueue = .main){
+    private func createLayerImage(dispatchQueue: DispatchQueue = .global()){
         
             DispatchQueue.main.async { [weak self] in
                 
